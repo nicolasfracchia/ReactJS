@@ -1,7 +1,7 @@
 import { Component } from "react";
 
 const styles = {
-    detallesCarro: {
+    detailsCart: {
         backgroundColor: '#FFF',
         position: 'absolute',
         marginTop: '30px',
@@ -14,7 +14,7 @@ const styles = {
         margin: '0',
         padding: '0',
     },
-    producto: {
+    product: {
         listStyleType: 'none',
         display: 'flex',
         justifyContent: 'space-between',
@@ -24,17 +24,17 @@ const styles = {
     }
 }
 
-class DetallesCarro extends Component{
+class DetailsCart extends Component{
     render(){
-        const {carro} = this.props
+        const {cart} = this.props
         return (
-            <div style={styles.detallesCarro}>
+            <div style={styles.detailsCart}>
                 <ul style={styles.ul}>
-                    {carro.map(x => 
-                        <li key={x.name} style={styles.producto}>
+                    {cart.map(x => 
+                        <li key={x.name} style={styles.product}>
                             <img alt={x.name} src={x.img} width='50' height='32' />
                             {x.name}
-                            <span>{x.cantidad}</span>
+                            <span>{x.quantity}</span>
                         </li>
                     )}
                 </ul>
@@ -43,4 +43,4 @@ class DetallesCarro extends Component{
     }
 }
 
-export default DetallesCarro;
+export default DetailsCart;

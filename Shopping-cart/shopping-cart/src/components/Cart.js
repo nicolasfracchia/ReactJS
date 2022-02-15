@@ -1,9 +1,9 @@
 import { Component } from "react";
 import BubbleAlert from './BubbleAlert';
-import DetallesCarro from './DetallesCarro';
+import DetailsCart from './DetailsCart';
 
 const styles = {
-    carro: {
+    cart: {
         backgroundColor: '#359A2C',
         color: '#FFF',
         border: 'none',
@@ -18,25 +18,25 @@ const styles = {
     }
 }
 
-class Carro extends Component{
+class Cart extends Component{
     render(){
-        const {carro, esCarroVisible, mostrarCarro} = this.props
-        const cantidad = carro.reduce((acc, el) => acc + el.cantidad, 0)
+        const {cart, isCartVisible, showCart} = this.props
+        const quantity = cart.reduce((acc, el) => acc + el.quantity, 0)
         return(
             <div>
                 <span style={styles.bubble}>
-                    {cantidad !== 0 ? <BubbleAlert value={cantidad} /> : null}
+                    {quantity !== 0 ? <BubbleAlert value={quantity} /> : null}
                 </span>
                 <button 
-                    style={styles.carro}
-                    onClick={mostrarCarro}
+                    style={styles.cart}
+                    onClick={showCart}
                 >
-                    Carro
+                    Cart
                 </button>
-                {esCarroVisible ? <DetallesCarro carro={carro} /> : null}
+                {isCartVisible ? <DetailsCart cart={cart} /> : null}
             </div>
         )
     }
 }
 
-export default Carro;
+export default Cart;
