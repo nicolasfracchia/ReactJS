@@ -52,7 +52,3 @@ const App = () => {
 }
 
 export default App;
-
-
-// ACCESS KEY: 8MsdOKtLK7R-TPQMqXD3xuQS2g6iW0RsE6gY1xQm8Us
-// SECRET KEY: v15eYEMYPjLK6msO5cea04TK3FA8AO63ROv6TO_uXe8
