@@ -5,13 +5,15 @@ import UserForm from './components/UserForm'
 
 function App() {
 
-  const [usuarios, setUsuarios] = useState([])
+  const [users, setUsers] = useState([])
 
-  const submit = usuario => {
-    setUsuarios([
-      ...usuarios,
-      usuario
-    ])
+  const submit = user => {
+    if(users.find((u) => u.email.includes(user.email)) === undefined){
+      setUsers([
+        ...users, 
+        user
+      ])
+    }
   }
 
   return (
@@ -24,7 +26,7 @@ function App() {
         </Card>
         <Card>
           <ul>
-            {usuarios.map(x => 
+            {users.map(x => 
               <li key={x.email}>{`${x.name} ${x.lastname}: ${x.email}`}</li>
             )}
           </ul>
